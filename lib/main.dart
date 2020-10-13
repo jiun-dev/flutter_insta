@@ -224,9 +224,89 @@ class _InstagramState extends State<Instagram> {
                               Text(posts[i].userName)
                             ],
                           ),
+                          IconButton(
+                              icon: Icon(SimpleLineIcons.options),
+                              onPressed: () {}),
                           Image(
                             image: NetworkImage(posts[i].postImage),
                             width: MediaQuery.of(context).size.width,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              IconButton(
+                                  icon: Icon(FontAwesome.heart_o),
+                                  onPressed: () {}),
+                              IconButton(
+                                  icon: Icon(FontAwesome.comment_o),
+                                  onPressed: () {}),
+                              IconButton(
+                                  icon: Icon(FontAwesome.send_o),
+                                  onPressed: () {}),
+                              IconButton(
+                                  icon: Icon(FontAwesome.bookmark_o),
+                                  onPressed: () {}),
+                            ],
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 14,
+                            ),
+                            child: RichText(
+                              softWrap: true,
+                              overflow: TextOverflow.visible,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: 'Liked By',
+                                    style: TextStyle(color: Colors.black)),
+                                TextSpan(
+                                    text: 'Elizabeth',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                                TextSpan(
+                                    text: 'Elinor',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                                TextSpan(
+                                    text: 'Josefina',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                                TextSpan(
+                                  text: 'and',
+                                ),
+                                TextSpan(
+                                    text: '1294 others',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                              ]),
+                            ),
+                          ),
+
+                          // caption
+
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 5),
+                            child: RichText(
+                              softWrap: true,
+                              overflow: TextOverflow.visible,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: posts[i].userName,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                                TextSpan(
+                                    text: ' ${posts[i].caption}',
+                                    style: TextStyle(color: Colors.black)),
+                              ]),
+                            ),
                           ),
                         ],
                       ),
